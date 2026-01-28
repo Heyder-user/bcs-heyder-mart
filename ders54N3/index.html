@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function hesab(qiymet, say){
+            let umumi = qiymet * say;
+            if(umumi > 100) {
+                console.log("Sizə endirim düşür");
+            } else {
+                console.log("Size endirim dusmur.KASIB!")
+            } 
+            return umumi;
+        }
+        console.log(hesab(25, 5)); 
+    </script>
+</body>
+</html>

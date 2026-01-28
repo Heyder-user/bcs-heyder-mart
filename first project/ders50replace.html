@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="myFucntion()">try it</button>
+    <p id="hi">Salam! Men BCS-da oxuyuram</p>
+    <script>
+        function myFucntion() {
+            var str = document.getElementById("hi").innerHTML;
+            var txt = str.replace("Men" , "Sen");
+            document.getElementById("hi").innerHTML = txt;
+        }
+    </script>
+</body>
+</html>
