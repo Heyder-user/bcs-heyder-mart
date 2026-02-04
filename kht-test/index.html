@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function gizli(a) {
+            return a * a - 1;
+        }
+        function hesab(x, y) {
+            if (x > y) {
+                return gizli(x) - y;
+            } else{
+                return gizli(y) + x;
+            }
+        }
+        function son(m, n) {
+            let a = hesab(m, n);
+            let b = hesab(n, m);
+            return a - b;
+        }
+        console.log(4, 2);
+    </script>
+</body>
+</html>
