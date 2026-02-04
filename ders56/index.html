@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="hi"></p>
+    <script>
+        let num = +prompt("1-den 10-a kimi eded daxil edin");
+        function myFunction() {
+            let num2 = document.getElementById("hi").innerHTML = Math.floor((Math.random() * 10) + 1);
+            if(num == num2) {
+                alert("Tebrikler!");
+            } else {
+                alert("Yeniden cehd edin.(CTRL+R ile)");
+            }
+        }
+        myFunction();
+    </script>
+</body>
+</html>
