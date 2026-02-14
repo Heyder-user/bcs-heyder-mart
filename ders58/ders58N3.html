@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let yas = +prompt("Nece yaasin var???");
+        function biletQiymeti(yas) {
+            if(yas < 18) {
+                alert("Sizin biletin qiymeti 5 AZN-dir.");
+            } else if(yas >= 18 && yas <= 65) {
+                alert("Sizin biletin qiymeti 10 AZN-dir.");
+            } else{
+                alert("Sizin biletin qiymeti 15 AZN-dir.");
+            }
+        }
+        biletQiymeti(yas)
+    </script>
+</body>
+</html>

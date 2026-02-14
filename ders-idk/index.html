@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fiqur = prompt("fiqur sec:kvadrat-1, duzbucaqli-2, daire-3.").toLowerCase();
+            switch (fiqur) {
+            case "1":
+            case "kvadrat":
+                let a = Number(prompt("teref ver."));
+                console.log(" sahe: " + (a * a));
+            break;
+            case "2":
+            case "duzbucaqli":
+                let en = Number(prompt("en pls."));
+                let uzunluq = Number(prompt("uzunlug pls."));
+                console.log("sahe: " + (en * uzunluq));
+            break;
+            case "3":
+            case "daire":
+                let r = Number(prompt("radius ver pls."));
+                console.log("sahe: " + (Math.PI * r * r).toFixed(2));
+            break;
+            default:
+                console.log("pls secim et.(CTRL+R ile)");
+}
+    </script>
+</body>
+</html>

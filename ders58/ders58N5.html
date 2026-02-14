@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let parol = prompt("Parol daxil edin.");
+        let x = parol.length;
+        function parolYoxla(parol) {
+            if(x < 8) {
+                alert("Cox qisadir.");
+            } else if(parol == 12345678) {
+                alert("Cox asandir.");
+            } else {
+                alert("Parol qebul edildi.");
+            }
+        }
+        parolYoxla(parol)
+    </script>
+</body>
+</html>
