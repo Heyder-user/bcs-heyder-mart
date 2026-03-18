@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //entires,foreach,filter olmadi
+        //concat
+        let adlar1 = ["Heyder", "Subhan", "Eli", "Kenan"];
+        let adlar2 = ["Samil", "Ramal", "Seid", "Hikmet"];
+        let hamisi = adlar1.concat(adlar2)
+        console.log(hamisi);
+        //copyWithin
+        console.log(adlar1.copyWithin(2,0));
+        //fill
+        console.log(adlar1.fill("BCS"));
+        //from
+        let idk = Array.from("ABCDEFGH");
+        console.log(idk);
+        //includes
+        console.log(adlar1.includes("Eli"));
+        //indexOf
+        console.log(adlar1.indexOf("Eli"));
+        //lastindexOf
+        console.log(adlar1.lastIndexOf("Heyder"));
+        //lenght
+        console.log(adlar1.length());
+        //reverse
+        console.log(adlar1.reverse());
+        //sort
+        console.log(adlar1.sort());
+    </script>
+</body>
+</html>

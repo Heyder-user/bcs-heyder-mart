@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user = {
+            //getter
+            fName: "Heyder",
+            lName: "Heyderov",
+            balance: 999999999,
+            idk: function() {
+                return this.fName + " "+ this.lName;
+            },
+            set bcs(medaxil) {
+                this.balance = this.balance + medaxil;
+            }
+        }
+        let message = user.idk();
+        console.log(message);
+        user.bcs = 9999999;
+        console.log("The balance is:" + " " + user.balance);
+    </script>
+</body>
+</html>

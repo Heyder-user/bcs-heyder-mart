@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let car = {
+            brand: "Mercedes",
+            year: 2020,
+            maxSpeed: 200,
+            engine: "400hp",
+            color: "blue",
+            start: function(){
+                return "Avtomobil ise dusdu....";
+            },
+
+            tuning: function(speed){
+                //if-else yaz 200-den asagi olmasin
+                if(speed < this.maxSpeed){
+                    console.log("Sabit suretden asagi ola bilmez!!!");
+                }else{
+                    this.maxSpeed = speed; //maxSpeed 400 olacaq deyisenden sonra...
+                }
+            },
+
+            set updateColor(color){
+                this.color = color;
+            }
+        }
+
+        // Getter ve ya Get metodu sade versiya...
+        let messageStart = car.start();
+        console.log(messageStart);
+
+        console.log("///////////////////////////////");
+        // Setter ve ya Set metodu sade versiya...
+        car.tuning(400);
+        let carSpeed = car.maxSpeed;
+        console.log("Avtomobilin max sureti: " + carSpeed);
+
+        console.log("///////////////////////////////");
+        //Setter(set) ile rengin yenilenmesi
+        car.updateColor = "black";
+        let color = car.color;
+        console.log("Avtomobilin Rengi: " + color);
+    </script>
+</body>
+</html>
