@@ -1,5 +1,5 @@
-let num1 = 8;
-let num2 = 4;
+let num1 = prompt("eded daxil et dumbeley");
+let num2 = prompt("eded daxil et yene dumbeley");
 let operation = prompt("Istediyiniz emeliyyati daxil edin");
 switch(operation) {
     case '1':

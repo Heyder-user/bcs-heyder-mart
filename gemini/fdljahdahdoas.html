@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Clicker Pro</title>
+    
+    <style>
+        body {
+            background: #0d0d0d;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .game-card {
+            background: #1a1a1a;
+            border: 2px solid #00f2fe;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px #00f2fe;
+            text-align: center;
+            position: relative;
+            width: 400px;
+        }
+
+        h1 { margin-top: 0; color: #00f2fe; text-transform: uppercase; }
+
+        #game-box {
+            width: 100%;
+            height: 250px;
+            background: #222;
+            border-radius: 10px;
+            position: relative;
+            margin: 20px 0;
+            cursor: crosshair;
+            border: 1px solid #333;
+        }
+
+        #target {
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, #ff0055, #a30036);
+            border-radius: 50%;
+            position: absolute;
+            display: none;
+            box-shadow: 0 0 15px #ff0055;
+            transition: transform 0.1s;
+        }
+
+        #target:active { transform: scale(0.8); }
+
+        .btn {
+            background: #00f2fe;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover { background: #4facfe; box-shadow: 0 0 10px #4facfe; }
+
+        .stats { display: flex; justify-content: space-around; font-size: 1.2rem; }
+        
+        #message { color: #ffeb3b; font-weight: bold; height: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="game-card">
+        <h1>Neon Clicker</h1>
+        <div class="stats">
+            <div>Xal: <span id="score">0</span></div>
+            <div>Vaxt: <span id="timer">15</span>s</div>
+        </div>
+
+        <div id="game-box">
+            <div id="target"></div>
+        </div>
+
+        <p id="message"></p>
+        <button id="start-btn" class="btn">OYUNA BAŞLA</button>
+    </div>
+
+    <script>
+        const target = document.getElementById('target');
+        const scoreElement = document.getElementById('score');
+        const timerElement = document.getElementById('timer');
+        const startBtn = document.getElementById('start-btn');
+        const gameBox = document.getElementById('game-box');
+        const message = document.getElementById('message');
+
+        let score = 0;
+        let timeLeft = 15;
+        let gameActive = false;
+        let timerInterval;
+
+        function moveTarget() {
+            const maxX = gameBox.clientWidth - 45;
+            const maxY = gameBox.clientHeight - 45;
+            
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            
+            target.style.left = randomX + 'px';
+            target.style.top = randomY + 'px';
+        }
+
+        startBtn.addEventListener('click', () => {
+            // Parametrləri sıfırla
+            score = 0;
+            timeLeft = 15;
+            gameActive = true;
+            scoreElement.innerText = score;
+            timerElement.innerText = timeLeft;
+            message.innerText = "Hədəfi vur!";
+            
+            startBtn.style.display = 'none';
+            target.style.display = 'block';
+            moveTarget();
+
+            // Vaxtı başlad
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                timerElement.innerText = timeLeft;
+
+                if (timeLeft <= 0) {
+                    endGame();
+                }
+            }, 1000);
+        });
+
+        target.addEventListener('click', () => {
+            if (gameActive) {
+                score++;
+                scoreElement.innerText = score;
+                moveTarget();
+                
+                // Hər 5 xaldan bir rəngi dəyişdirək (vizual effekt)
+                if(score % 5 === 0) {
+                    target.style.background = `hsl(${Math.random() * 360}, 70%, 50%)`;
+                }
+            }
+        });
+
+        function endGame() {
+            gameActive = false;
+            clearInterval(timerInterval);
+            target.style.display = 'none';
+            startBtn.style.display = 'inline-block';
+            startBtn.innerText = "YENİDƏN BAŞLA";
+            message.innerText = `Oyun bitdi! Rekordun: ${score}`;
+        }
+    </script>
+</body>
+</html>

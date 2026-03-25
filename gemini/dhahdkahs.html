@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-ü Bir Yerdə: İnteraktiv Dizayn</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #0f0c29;
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            overflow: hidden;
+            color: white;
+        }
+
+        /* İnteraktiv Sahə */
+        .box {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            cursor: pointer;
+            transition: 0.5s;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .circle {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(#ff0057, #e64a19);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(30px);
+            animation: move 5s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-50px, -50px); }
+            to { transform: translate(50px, 50px); }
+        }
+
+        h2 { font-size: 2rem; margin-bottom: 10px; }
+        p { font-size: 1rem; opacity: 0.8; line-height: 1.5; }
+        
+        #btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #00d2ff;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #btn:active { transform: scale(0.9); }
+    </style>
+</head>
+<body>
+
+    <div class="circle"></div>
+
+    <div class="box" id="mainBox">
+        <div class="content">
+            <h2 id="title">Salam!</h2>
+            <p id="text">Bu kart HTML-də yaradılıb, CSS-lə bəzədilib və JS ilə idarə olunur. Düyməyə bas və möcüzəni gör!</p>
+            <button id="btn">Rəngi Dəyiş</button>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('btn');
+        const box = document.getElementById('mainBox');
+        const title = document.getElementById('title');
+
+        // Düyməyə kliklədikdə baş verənlər
+        btn.addEventListener('click', () => {
+            // Təsadüfi rəng yaradan funksiya
+            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+            const finalColor = "#" + randomColor;
+
+            // CSS-i JavaScript vasitəsilə dəyişirik
+            box.style.borderColor = finalColor;
+            btn.style.background = finalColor;
+            title.style.color = finalColor;
+            
+            // Mətni dəyişirik
+            title.innerText = "Dəyişdi!";
+            
+            console.log("Rəng yeniləndi: " + finalColor);
+        });
+
+        // Kartın üzərində siçan hərəkət edəndə yüngül reaksiya
+        box.addEventListener('mousemove', (e) => {
+            let x = (window.innerWidth / 2 - e.pageX) / 20;
+            let y = (window.innerHeight / 2 - e.pageY) / 20;
+            box.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+        });
+
+        box.addEventListener('mouseleave', () => {
+            box.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        });
+    </script>
+
+</body>
+</html>
