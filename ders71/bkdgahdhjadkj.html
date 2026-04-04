@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let bcs_is_the_best_kurs = new Map([
+            ["Alma","2 AZN"],
+            ["Banan", "3 AZN"],
+            ["Portagal", "4 AZN"]
+        ]);
+        console.log(bcs_is_the_best_kurs.get("Banan"));  
+        if(bcs_is_the_best_kurs.has("Albali")){
+            console.log("Bu mehsul burda var.");
+        } else{
+            console.log("Bu mehsul yoxdu burda DEYERLI MUSTERI.");
+        }
+        console.log(bcs_is_the_best_kurs.set("Alma", "2.50 AZN"));
+
+
+        const bcs_qrupunun_test_qiymetleri= new Map([
+            ["Eli", 88],
+            ["Kenan", 67],
+            ["Heyder", 85],
+            ["Inci", 81.1],
+            ["Suphan", 0]
+        ]);
+        for (let [qiymet, score] of bcs_qrupunun_test_qiymetleri) {z
+            if (score > 51) {
+                console.log(qiymet + " NİCEEEE");
+            } else {
+                console.log(qiymet + " GAME OVER GET OUT");
+            }
+        }
+    </script>
+</body>
+</html>
