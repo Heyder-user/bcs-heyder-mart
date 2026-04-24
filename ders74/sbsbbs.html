@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Heyvan {
+            constructor(ad, yas) {
+                this.ad = ad;
+                this.yas = yas;
+            }
+            makesound() {
+                return "(sounds...)";
+            }
+            info() {
+                return `Name: ${this.ad}, Age: ${this.yas}`;
+            }
+        }
+        class It extends Heyvan {
+            sesCixar() {
+                return "woof";
+            }
+        }
+        class Pisik extends Heyvan {
+            sesCixar() {
+                return "meow";
+            }
+        }
+        const idk = new It("paputu", 99);
+        console.log(idk.sesCixar());
+        console.log(idk.info());
+    </script>
+</body>
+</html>

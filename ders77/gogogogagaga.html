@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let heyder = +prompt("nece yasin var??????");
+        try {
+            if (heyder < 18) {
+                throw "hele yasin azdir balaca"
+            }
+            console.log("qeydiyat uygundu(subheli)");
+        } catch (error) {
+            console.log(error); 
+        } finally {
+            console.log("yoxlama etdik cix get burdan vso");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class super_duper_masin {
+            constructor(brand){
+                this.brand = brand;
+            }
+            start(){
+                console.log("Neqliyyat xoddandi.");
+            }
+        }
+        class krutoy_masin extends super_duper_masin{
+            constructor(brand){
+                 super(brand);
+            }
+        }
+        const mymasin = new krutoy_masin("07 peredoklu");
+        console.log("BRAND NAME IS... " + mymasin.brand);
+        krutoy_masin.start();
+    </script>
+</body>
+</html>
