@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="light">salam</div>
+    <div class="light">necesen</div>
+    <div class="light">1 manat qazandin</div>
+    <script>
+        const htmlCollection = document.getElementsByClassName("light");
+        const nodeList = document.querySelectorAll(".light");
+        console.log(htmlCollection.length);
+        console.log(nodeList.length);
+        nodeList.forEach((el, index) => {
+            console.log(index, el.textContent);
+        });
+        for (let i = 0; i < htmlCollection.length; i++) {
+            console.log(i, htmlCollection[i].textContent);
+        }
+        document.body.innerHTML += '<div class="light">idk what write</div>';
+        console.log(htmlCollection.length);
+        console.log(nodeList.length);
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="card" style="border: 1px solid #ccc; padding: 20px; width: 300px; text-align: center;">
+    <h2 id="main-title">super duper mehsul hec yerde tapilmayan</h2>
+    <p class="information">doritos donerle</p>
+    <p class="information">Qiymət: 10 AZN</p>
+    <button id="change-btn">Dəyiş</button>
+    <script>
+        let button = document.getElementById("change-btn");
+        let start = document.getElementById("main-title");
+        let information = document.getElementsByClassName("information");
+        let card = document.querySelector("#card");
+        card.style.backgroundColor = "#f2f2f2";
+        button.addEventListener("click", function () {
+            start.innerText = "Doritos doner dadli. Almaq ucun bu nomreye zeng edin +994 50 555 55 55";
+                information[1].style.color = "green";
+                information[1].innerText = "qiymet : 1 dene gunes sistemi";
+                card.style.border = "2px solid blue";
+            });
+    </script> 
+</body>
+</html>
